@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双向数据绑定</title>
+</head>
+<body>
+    <div id="app">
+        <div v-text="name"></div>
+        <div v-text="age"></div>
+        <div v-text="time"></div>
+
+        <button id="bttPlus">+1</button>
+        <button id="btnMinus">-1</button>
+    </div>
+    
+</body>
+<script src="./VUE.js"></script>
+<script>
+    const vue = new Vue({
+        el:document.getElementById("app"),
+        data:{
+            name:"Jack Cheng",
+            age:17,
+            time:new Date().toLocaleTimeString()
+        }
+    });
+
+    console.log(vue);
+
+    document.getElementById("bttPlus").onclick=()=>{
+        vue.data.age++;
+    };
+    document.getElementById("btnMinus").onclick=()=>{
+        vue.data.age--;
+    }
+    
+    
+
+    // setInterval(()=>{
+    //     observer.data.name = "Jack Cheng";
+    //     observer.data.age = 18;
+    //     observer.data.time = new Date().toLocaleTimeString();
+    // },1000)
+
+
+</script>
+</html>
